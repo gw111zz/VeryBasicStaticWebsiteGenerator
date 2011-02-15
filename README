@@ -1,0 +1,14 @@
+This is a very basic static website generator written in Ruby for use when 
+even a tool such as nanoc is too complex for your needs.  
+
+I wrote it as I needed a very simple tool that could allow me to create basic
+static website of a few pages from a common template.
+
+Usage: 
+
+$ ruby generate.rb 
+Generated ./output/download.html
+Generated ./output/index.html
+Copied resource files
+
+This will generate a basic example website in the directory ./output
