@@ -4,11 +4,45 @@ even a tool such as nanoc is too complex for your needs.
 I wrote it as I needed a very simple tool that could allow me to create basic
 static website of a few pages from a common template.
 
-Usage: 
+GETTING STARTED:
+
+VeryBasicStaqticWebsiteGenerator is useful for generating websites consisting 
+of pages which are based on a common template (such as a common menu bar, 
+background and copyright notice) and with a main section containing
+each page's unique content.
+
+The tool can be used by following these steps:
+
+1. Code the website template and save it as templates/index.rhtml
+Place the following markup including the tags where the unique content should
+go:  <%= content %>
+
+2. Write the content for each page and save the files in the content folder.
+The filename should be the same as the HTML filename that will be generated.
+
+For example, if the site has two pages: index.html and about.html then the 
+unique content that appears in each page (without the template code) should
+go in content/index.html and content/about.html
+
+VeryBasicStaqticWebsiteGenerator reads the template in templates/index.rhtml
+and puts each of the files in the content directory into the template.
+
+3. Place any files that just need to be copied into the generated site unchanged
+(for example, images, css files) in the resources directory.  The directory 
+structure under resources is copied as is into the website.
+
+4. In the root of the VeryBasicStaqticWebsiteGenerator directory, type
+ruby generate.rb
+
+The output should be similar to the following:
 
 $ ruby generate.rb 
 Generated ./output/download.html
 Generated ./output/index.html
 Copied resource files
 
-This will generate a basic example website in the directory ./output
+5. Examine the ./output directory which will contain the site
+An example is included in this package.
+
+
+
